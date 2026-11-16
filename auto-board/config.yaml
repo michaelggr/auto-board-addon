@@ -1,0 +1,20 @@
+name: auto-board
+version: 0.1.0
+slug: auto_board
+description: 米家极客版 + Home Assistant 双源自动化看板（清单/日志/触发统计/带审计撤回的启停）
+arch:
+  - aarch64
+  - amd64
+startup: services
+boot: auto
+# 通过 ingress 嵌入 HA 侧边栏，不额外暴露端口；容器可正常访问局域网网关
+ingress: true
+ingress_port: 3423
+panel_icon: mdi:home-automation
+panel_title: auto-board
+options:
+  gateway_url: ""
+  board_token: ""
+schema:
+  gateway_url: str?
+  board_token: str?

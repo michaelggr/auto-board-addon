@@ -12,14 +12,17 @@
 
 ## 安装
 
-1. HA → 设置 → 加载项 → 加载项商店 → 右上角「⋮」→ **仓库**
+> 注意：HA 2026.2 起「加载项」改名「应用（Apps）」，2026.11 引入 Marketplace（原 HACS）。
+> **本仓库是应用（App），必须在「设置 → 应用 → 应用商店」里添加，不能在 Marketplace 添加**（Marketplace 只装集成/卡片，会报 "holds apps, the Marketplace does not install apps"）。
+
+1. HA → **设置 → 应用 → 应用商店** → 右上角「⋮」→ **仓库**
 2. 填入：`https://github.com/michaelggr/auto-board-addon` → 添加
-3. 刷新商店，找到 **auto-board** → 安装
+3. 回到商店列表，找到 **auto-board** → 安装
 4. 「配置」页按需填写：
    - `gateway_url`：米家极客版中枢网关地址，如 `http://192.168.1.5`（留空则只跑 HA 半边）
-   - `board_token`：看板访问令牌（可选；留空则每次启动随机生成并打印到 add-on 日志）
-5. 启动 add-on，点「打开 Web UI」访问 `http://<HA所在机器IP>:3423`
-6. 粘贴令牌（若未固定 `board_token`，到 add-on「日志」页查看启动时打印的令牌）
+   - `board_token`：看板访问令牌（可选；留空则每次启动随机生成并打印到应用日志，**建议填固定值**）
+5. 启动应用，点「打开 Web UI」访问 `http://<HA所在机器IP>:3423`
+6. 粘贴令牌（若未固定 `board_token`，到应用「日志」页查看启动时打印的令牌）
 7. 极客版首次使用：页面黄条输入 6 位网关登录码（一次性，重连需新码）
 
 ## 可选：加进 HA 侧边栏

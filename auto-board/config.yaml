@@ -15,7 +15,7 @@ ports:
   3423/tcp: 3423
 ports_description:
   3423/tcp: 看板网页端口
-webui: http://[HOST]:3423
+webui: http://[HOST]:[PORT:3423]
 panel_icon: mdi:home-automation
 panel_title: auto-board
 options:

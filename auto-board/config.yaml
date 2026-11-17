@@ -7,9 +7,15 @@ arch:
   - amd64
 startup: services
 boot: auto
-# 通过 ingress 嵌入 HA 侧边栏，不额外暴露端口；容器可正常访问局域网网关
-ingress: true
-ingress_port: 3423
+init: false
+# 不使用 ingress：Next.js 静态资源是根绝对路径（/_next/...），
+# 经 ingress 的 /api/hassio_ingress/<token>/ 子路径访问会 404 白屏。
+# 改为直连端口 + webui 按钮；如需侧边栏入口，用 panel_iframe 指向同一地址。
+ports:
+  3423/tcp: 3423
+ports_description:
+  3423/tcp: 看板网页端口
+webui: http://[HOST]:3423
 panel_icon: mdi:home-automation
 panel_title: auto-board
 options:

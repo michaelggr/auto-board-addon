@@ -1,0 +1,22 @@
+name: Ninebot
+version: 0.1.0
+slug: ninebot
+description: 九号电动车接入（电量/位置/状态/控车），对外提供明文 REST API 供 HA 读取
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+init: false
+ports:
+  18009/tcp: 18009
+ports_description:
+  18009/tcp: REST API 端口
+options:
+  account: ""
+  password: ""
+  api_token: ""
+schema:
+  account: str
+  password: password
+  api_token: password?

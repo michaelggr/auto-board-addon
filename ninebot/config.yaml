@@ -1,5 +1,5 @@
 name: Ninebot
-version: 0.1.0
+version: 0.1.1
 slug: ninebot
 description: 九号电动车接入（电量/位置/状态/控车），对外提供明文 REST API 供 HA 读取
 arch:
